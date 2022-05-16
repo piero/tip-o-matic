@@ -19,12 +19,35 @@
                     "text": "Zap"
                 }
             ]
+        },
+        {
+            "id": 2,
+            "text": "What's the answer to Bar?",
+            "min_tip": 5,
+            "answers": [
+                {
+                    "answer_id": 1,
+                    "text": "Foo"
+                },
+                {
+                    "answer_id": 2,
+                    "text": "Xym"
+                },
+                {
+                    "answer_id": 3,
+                    "text": "Zap"
+                }
+            ]
         }
     ],
     "answers":[
         {
             "question_id": 1,
             "text": "Bar is the right answer because of foobar"
+        },
+        {
+            "question_id": 2,
+            "text": "Foo is the right answer because of foobar"
         }
     ]
 }

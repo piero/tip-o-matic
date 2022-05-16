@@ -1,30 +1,41 @@
 <script>
 	export let initialCredits;
-	export let dataFile;
+	// export let dataFile;
+	let currentQuestionId = 0;
 
-	import * as quizData from "./data/sardinia-quiz.json"
+	import * as quizData from "./data/sardinia-quiz.json";
 	import QuestionPage from "./components/QuestionPage.svelte";
 	import CreditsCounter from "./components/CreditsCounter.svelte";
-	
 
 	function showQuestion(question) {
-		new QuestionPage(question={question})
+		new QuestionPage((question = { question }));
 	}
 
+	function handleRequestNextQuestion(event) {
+		if (event.detail.direction === "next") {
+			currentQuestionId++;
+		} else if (event.detail.direction === "previous"){
+			currentQuestionId--;
+		} else {
+			console.error("Unknown direction:", event.detail.direction);
+		}
+	}
+	
 </script>
 
 <main>
 	<h1>{quizData.title}</h1>
 
-
 	<CreditsCounter remainingCredits={initialCredits} />
 
+	{#if (quizData.questions.length > 0)}
+	<QuestionPage
+		question={quizData.questions[currentQuestionId]}
+		lastQuestionId={quizData.questions.length}
+		on:message={handleRequestNextQuestion}
+	/>
+	{/if}
 
-	<!-- {#each quizData.questions as question}
-	<button on:click={showQuestion(question)}>
-	Push me
-	</button>
-	{/each} -->
 </main>
 
 <style>
