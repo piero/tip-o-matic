@@ -1,0 +1,30 @@
+{
+    "title": "Quiz title",
+    "questions": [
+        {
+            "id": 1,
+            "text": "What's the answer to Foo?",
+            "min_tip": 5,
+            "answers": [
+                {
+                    "answer_id": 1,
+                    "text": "Bar"
+                },
+                {
+                    "answer_id": 2,
+                    "text": "Xym"
+                },
+                {
+                    "answer_id": 3,
+                    "text": "Zap"
+                }
+            ]
+        }
+    ],
+    "answers":[
+        {
+            "question_id": 1,
+            "text": "Bar is the right answer because of foobar"
+        }
+    ]
+}
