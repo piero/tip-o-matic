@@ -4,7 +4,7 @@
 
 	import * as quizData from "./data/sardinia-quiz.json"
 	import QuestionPage from "./components/QuestionPage.svelte";
-	import Credits from "./components/Credits.svelte";
+	import CreditsCounter from "./components/CreditsCounter.svelte";
 	
 
 	function showQuestion(question) {
@@ -17,7 +17,7 @@
 	<h1>{quizData.title}</h1>
 
 
-	<Credits remainingCredits={initialCredits} />
+	<CreditsCounter remainingCredits={initialCredits} />
 
 
 	<!-- {#each quizData.questions as question}
